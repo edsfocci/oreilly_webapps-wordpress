@@ -15,3 +15,17 @@ function my_plugin_wp_footer() {
 add_action( 'wp_footer', 'my_plugin_wp_footer' );
 ?>
 
+<?php
+add_action( 'init', 'register_my_post_types' );
+
+function register_my_post_types() {
+  register_post_type( 'properties',
+    array(
+      'labels' => array(
+        'name' => 'Properties'
+      ),
+      'public' => true
+    )
+  );
+}
+?>
